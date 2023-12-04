@@ -4,6 +4,6 @@ export const PageLocalStorage = () => {
 	const { value: title, save: saveTitle } = useLocalStorage('nnn');
 
 	return (
-		<p>Title = [{title}]</p>
+		<p>Title = <input value={title} onChange={(e) => saveTitle(e.target.value)} /> ({title})</p>
 	)
 }
