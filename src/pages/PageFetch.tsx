@@ -1,17 +1,9 @@
-import { useEffect, useState } from "react";
-import { ISkill } from "../interfaces";
+import { useFetch } from "../hooks/useFetch";
 
 export const PageFetch = () => {
-	const [skills, setSkills] = useState<ISkill[]>([]);
+	const { items: skills } = useFetch(
+		"https://edwardtanguay.vercel.app/share/skills_with_id.json"
+	);
 
-	useEffect(() => {
-		(async () => {
-		const response = await fetch('https://edwardtanguay.vercel.app/share/skills_with_id.json');
-			const _skills = await response.json();
-			setSkills(_skills);
-		})();
-	},[])
-	return (
-		<p>There are {skills.length} skills.</p>
-	)
-}
+	return <p>There are {skills.length} skills.</p>;
+};
