@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useToggle } from "../hooks/useToggle";
 
 export const PageToggle = () => {
-	const [isOnline, setIsOnline] = useState(false);
+	const [isOnline, toggle] = useToggle();
+
 	return (
 		<div className="flex gap-3 items-center">
-			<button onClick={() => setIsOnline(!isOnline)}>change online status</button>
+			<button onClick={() => toggle()}>change online status</button>
 			<p className="text-xl">{isOnline ? 'now online' : 'now offline'}</p>
 		</div>
 	)
