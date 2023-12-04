@@ -1,5 +1,11 @@
+import { useState } from "react";
+
 export const PageToggle = () => {
+	const [isOnline, setIsOnline] = useState(false);
 	return (
-		<p>This is the toggle page.</p>
+		<div>
+			<button>change online status</button>
+			<p>{isOnline ? 'now online' : 'now offline'}</p>
+		</div>
 	)
 }
