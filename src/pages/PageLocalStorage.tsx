@@ -1,5 +1,9 @@
+import { useLocalStorage } from "../hooks/useLocalStorage"
+
 export const PageLocalStorage = () => {
+	const { value: title, save: saveTitle } = useLocalStorage('nnn');
+
 	return (
-		<p>This is the local storage page.</p>
+		<p>Title = [{title}]</p>
 	)
 }
