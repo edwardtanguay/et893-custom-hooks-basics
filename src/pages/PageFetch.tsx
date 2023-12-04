@@ -3,7 +3,7 @@ import { ISkill } from "../interfaces";
 
 export const PageFetch = () => {
 	const { items: skills } = useFetch<ISkill[]>(
-		"https://edwardtanguay.vercel.app/share/skills_with_id.json"
+		"https://edwardtanguay.vercel.app/share/skills_with_id.json", true
 	);
 
 	return (
